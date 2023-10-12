@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--ICONES-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styleLogin.css">
+    <title>Login</title>
+</head>
+<body>   
+    <main id="container">
+        <form id="login_form">
+            <div id="form_header">
+                <h1>Login</h1>
+            </div>
+            <div id="inputs">
+                <div class="input-box">
+                    <label for="email">
+                        E-mail
+                        <div class="input-field">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="email" name="email">
+                        </div>
+                    </label>
+                </div>
+
+                <div class="input-box">
+                    <label for="senha">
+                        Senha
+                        <div class="input-field">
+                            <i class="fa-solid fa-key"></i>
+                            <input type="senha" id="senha" name="senha">
+                        </div>
+                    </label>
+                    
+                    </div>
+                    <div id="registerLink">
+                        <a id="cadastro" href="/cadastro">
+                            Não possui uma conta, Registre-se
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" id="login_button">
+                Login
+            </button>
+        </form>
+    </main>
+    <script src="server.js"></script>
+</body>
+</html>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+
+    /** variaveis de cores **/
+    :root {
+        --color-dark-50: #797984;
+        --color-dark-100: #312d37;
+        --color-dark-900: #000;
+    
+        /* Cor Vermelha */
+        --color-red-1: #e90523;
+        --color-red-2: #a70000;
+        --color-red-3: #f10101;
+    
+        --color-gradient: linear-gradient(90deg, var(--color-red-1), var(--color-red-2), var(--color-red-3));
+    }
+    
+    /* Geral */
+    * {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    #container {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(90deg, var(--color-red-1), var(--color-red-2), var(--color-red-3));
+    }
+    
+    #login_form {
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        background-color: #f8fafc;
+        padding: 30px 40px;
+        border-radius: 8px;
+        gap: 30px;
+        box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.336);
+    }
+    
+    #form_header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    #form_header h1 {
+        font-size: 40px;
+        position: relative;
+    }
+    
+    
+    #inputs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .input-box>label {
+        font-size: 14px;
+        color: var(--color-dark-50);
+    }
+    
+    .input-field {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 3px;
+        border-bottom: 1px solid var(--color-red-1);
+        cursor: text;
+    }
+    
+    .input-field i {
+        font-size: 18px;
+        cursor: text;
+        color: var(--color-dark-900);
+    } 
+    
+    .input-field input {
+        border: none;
+        width: 260px;
+        background-color: transparent;
+        font-size: 18px;
+        padding: 0px 5px;
+    }
+    
+    .input-field input:focus {
+        outline: none;
+    }
+    
+    #esqueceu_senha a {
+        text-decoration: none;
+        color: var(--color-dark-50);
+        font-size: 12px;
+    }
+    
+    #esqueceu_senha a:hover {
+        color: var(--color-red-1);
+    }
+    
+    #registerLink a {
+        text-decoration: none;
+        color: var(--color-dark-50);
+        font-size: 12px;
+    }
+    
+    #registerLink a:hover {
+        color: var(--color-red-1);
+    }
+    
+    #login_button {
+        border: none;
+        background: var(--color-gradient);
+        padding: 7px;
+        border-radius: 3px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+    }
+    
+    #login_button:hover {
+        transform: scale(1.05);
+    }
+    
+</style>
