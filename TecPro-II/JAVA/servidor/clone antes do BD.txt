@@ -4,11 +4,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 
 public class FilmeCRUD extends JFrame {
     private final List<Filme> filmes;
     private final DefaultListModel<String> listModel; //entender como funciona o array de string
     private final JList<String> filmeList;
+
     private final JTextField tituloTextField;
     private final JTextField diretorTextField;
     private final JTextField anoTextField;
@@ -89,13 +94,14 @@ public class FilmeCRUD extends JFrame {
         float nota = Float.parseFloat(notaTextField.getText());
 
         Filme filme = new Filme(titulo, diretor, ano, sinopse, nota);
+        int selectedIndex = filmeList.getSelectedIndex();
         filmes.add(filme); //trocaria para a string de banco de dados
         listModel.addElement(filme.getTitulo());
 
         limparCampos();
     }
-    
-    private void mostrarDadosIndice(){
+
+    private void mostrarDadosIndice() {
         int selectedIndex = filmeList.getSelectedIndex();
         tituloTextField.setText(filmes.get(selectedIndex).getTitulo());
         diretorTextField.setText(filmes.get(selectedIndex).getDiretor());
@@ -148,11 +154,20 @@ public class FilmeCRUD extends JFrame {
     }
 
     public static void main(String[] args) {
+        //Telinha papai
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 new FilmeCRUD();
             }
         });
+
+        //Banco de Dados
+        final String URL = "jdbc:sqlserver://regulus.cotuca.unicamp.br:1433;database=BD23121;user=BD23121;password=BD23121;encrypt=true;trustServerCertificate=true";
+        try (Connection connection = DriverManager.getConnection(URL)) {
+            System.out.println("Entrou");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
 

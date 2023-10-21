@@ -2,29 +2,49 @@ import java.time.LocalDate;
 
 public class Filme {
 
-        private final int anoAtual = LocalDate.now().getYear();
+        private int idFilme;
         private String titulo;
         private String diretor;
         private int anoLancamento;
         private String sinopse;
         private float nota;
 
-
-
         public Filme(String titulo, String diretor, int anoLancamento, String sinopse, float nota) {
             this.titulo = titulo;
             this.diretor = diretor;
-            if (anoLancamento <= anoAtual){
+            if (anoLancamento <= LocalDate.now().getYear()){
                 this.anoLancamento = anoLancamento;
             }
             this.sinopse = sinopse;
-            if (nota <= 5 || nota >= 0){
+            if (nota <= 10 || nota >= 0){
+                this.nota = nota;
+            }
+
+        }
+        public Filme(int idFilme, String titulo, String diretor, int anoLancamento, String sinopse, float nota) {
+            this.idFilme = idFilme;
+            this.titulo = titulo;
+            this.diretor = diretor;
+            if (anoLancamento <= (LocalDate.now().getYear())){
+                this.anoLancamento = anoLancamento;
+            }
+            this.sinopse = sinopse;
+            if (nota <= 10 || nota >= 0){
                 this.nota = nota;
             }
 
         }
 
-        public String getTitulo() {
+
+    public int getIdFilme() {
+        return idFilme;
+    }
+
+    public void setIdFilme(int idFilme) {
+        this.idFilme = idFilme;
+    }
+
+    public String getTitulo() {
             return titulo;
         }
 
