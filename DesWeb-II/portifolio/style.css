@@ -176,7 +176,7 @@ header .image img{
 
 section .header{
     margin-bottom: 1rem;
-    color: #fff;
+    color: #ffffff;
     text-align: center;
     font-size: 2.25rem;
     font-weight: 600;
@@ -196,8 +196,8 @@ section .header{
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 300px;
-    height: 500px;
+    width: 320px;
+    height: 550px;
 }
 
 .filmes .card{
@@ -223,16 +223,26 @@ section .header{
     border-radius: 5px;
 }
 
-.filmes .card h4{
+.card h4 {
+    margin-top: 1rem; /* Adicione um espaço superior entre o título e a imagem */
     margin-bottom: 0.5rem;
     color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
 }
-
-.filmes .card p{
+.filmes .card label{
     color: #ccc;
     margin-bottom: 1rem;
+}
+
+.filmes .card p{
+    color: var(--color-red-1);
+    margin-bottom: 1rem;
+}
+.filmes .card img {
+    max-width: 100%; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
 .filmes .card a{
