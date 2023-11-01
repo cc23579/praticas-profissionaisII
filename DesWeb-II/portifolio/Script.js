@@ -43,7 +43,7 @@ adicionarCards()
 
 
 function irParaRedesSociais(){
-    rolarSuavemente(2000, 300)
+    rolarSuavemente(3000000, 300)
 }
 
 
