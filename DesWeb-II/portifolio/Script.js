@@ -39,6 +39,35 @@ function adicionarCards(){
 }
 adicionarCards()
 
-function alerta(){
-    alert("Fazer a função de descer a página no ponto onde está a lista")
+
+
+
+function irParaRedesSociais(){
+    rolarSuavemente(2000, 300)
+}
+
+
+function irParaALista(){
+    rolarSuavemente(1130, 300)
+}
+
+
+function rolarSuavemente(destino, duracao){
+    const inicio = window.pageYOffset;
+    const distancia = destino - inicio
+    const passos = 50; // Número de etapas na animação
+    const intervalo = duracao / passos;
+    let etapa = 0;
+
+    function animarScroll() {
+        etapa++;
+        const progresso = etapa / passos;
+        const deslocamento = inicio + distancia * progresso;
+        window.scrollTo(0, deslocamento);
+
+        if (etapa < passos) {
+            setTimeout(animarScroll, intervalo);
+        }
+    }
+    animarScroll();
 }

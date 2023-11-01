@@ -14,12 +14,13 @@
     
     <nav>
         <div class="nav-logo">
+        
         </div>
         <ul class="nav-links">
-            <li class="link"><a href="#">Listagem de Filmes</a></li>
-            <li id="link1" class="link"><a href="#"></a></li>
+            <li class="link" onclick="irParaALista()"><a href="#">Listagem de Filmes</a></li>
+            <li id="link1" class="link" onclick="irParaRedesSociais()"><a href="#">Redes Sociais</a></li>
         </ul>
-        <a href="colocarCaminho"><button class="btn">Login</button></a> 
+        <a href="ColocarOCaminhoDevido"><button class="btn">Login</button></a> 
     </nav>
 
 
@@ -27,14 +28,15 @@
         <div class="content">
             <span class="blur"></span>
             <span class="blur"></span>
-            <H1>CineCritique</H1>
+            <H1>Bem-vindo ao CineCritique!</H1>
             <p>
-              CineCritique é o seu site para avaliar e comparar a média das notas dos filmes.
-            </p>
-            <button class="btn" onclick="alerta()">Começar!</button>
+                CineCritique é o seu destino online para avaliar e comparar a média das notas dos filmes. Nossa missão é fornecer a você informações precisas e atualizadas sobre a qualidade dos filmes que você ama. Explore nosso catálogo, compartilhe suas opiniões e descubra as melhores críticas. Seja um cinéfilo informado e faça parte da nossa comunidade apaixonada por cinema. Junte-se a nós e comece a sua jornada de descoberta cinematográfica hoje!
+            </p> <br>        
+            <button class="btn" onclick="irParaALista()">Começar!</button>
         </div>
     </header>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
     <section class="Cards">
         <h2 class="header">Lista de Filmes</h2>
         <div class="filmes">
@@ -102,6 +104,23 @@
                 <p>Nota:</p>
                 <label for="nota">5</label>
             </div>
+            <div class="card">
+                <h4>Belligol</h4>
+                <img src="https://www.umdoisesportes.com.br/media/umdoisesportes/2023/10/30181141/Jude-Bellingham.jpg">
+                
+                <p id="sinopse">Sinopse:</p>
+                <label for="sinopse">Bellingham</label>
+                
+                <p id="diretor">Diretor:</p>
+                <label for="diretor">É ELE!!!</label>
+
+                <p>Ano Lançamento:</p>
+                <label for="ano">2023</label>
+                
+                <p>Nota:</p>
+                <label for="nota">5</label>
+            </div>
+            
 </div>
             
         
@@ -113,12 +132,11 @@
         <span class="blur"></span>
         <div class="column">
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Redes Sociais dos criadores da plataforma!
             </p>
             <div class="socials">
-                <a href="#"><i class="ri-youtube-line"></i></a>
-                <a href="#"><i class="ri-instagram-line"></i></a>
-                <a href="#"><i class="ri-twitter-line"></i></a>
+                <a href="https://www.instagram.com/aldoestima/"><i class="ri-instagram-line"></i></a>
+                <a href="https://www.instagram.com/lxma_777/"><i class="ri-instagram-line"></i></a>
             </div>
         </div>
     </footer>
