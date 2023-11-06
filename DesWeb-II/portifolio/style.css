@@ -182,6 +182,15 @@ section .header{
     font-weight: 600;
 }
 
+.header:after {
+    content: "";
+    display: block;
+    width: 200px;
+    height: 3px;
+    background: #ffffff; 
+    margin: 10px auto;
+}
+
 .filmes{
     margin-top: 4rem;
     display: grid;
@@ -197,7 +206,7 @@ section .header{
     justify-content: center;
     position: relative;
     width: 320px;
-    height: 550px;
+    height: 600px;
 }
 
 .filmes .card{
@@ -224,11 +233,12 @@ section .header{
 }
 
 .card h4 {
-    margin-top: 1rem; /* Adicione um espaço superior entre o título e a imagem */
+    margin-top: 1rem; 
     margin-bottom: 0.5rem;
     color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
+   
 }
 .filmes .card label{
     color: #ccc;
@@ -254,6 +264,28 @@ section .header{
     color: #1e40af;
 }
 
+.rating {
+    direction: rtl; 
+}
+.rating input {
+    display: none;
+}
+
+.rating label {
+    cursor: pointer;
+}
+
+.rating label:before {
+    content: "\2605";
+    font-size: 2rem;
+    color: #ccc;
+}
+
+.rating input:checked ~ label:before {
+    color: #ffdd00; /* Cor amarela para estrelas selecionadas */
+}
+
+
 .sub-header{
     max-width: 600px;
     margin: auto;
@@ -261,69 +293,30 @@ section .header{
     color: #ccc;
 }
 
-.pricing{
-    margin-top: 4rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.pricing .card{
-    padding: 3rem 2rem;
-    background-color: #27272a;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid transparent;
-    border-radius: 15px;
-    transition: all 0.3s ease;
-}
-
-.pricing .card:hover{
-    background-color: #323232;
-    border-color: #fff;
-}
-
-.pricing .card .content{
-    flex: 1;
-    margin-bottom: 2rem;
-}
-
-.pricing .card h4{
-    margin-bottom: 1rem;
+.fix-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0083fd; 
     color: #fff;
-    font-size: 1.2rem;
-    font-weight: 500;
+    border: none;
+    border-radius: 50%; 
+    width: 50px;
+    height: 50px; 
+    font-size: 24px; 
+    z-index: 1000;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.pricing .card h3{
-    color: #fff;
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    font-weight: 600;
-    border-bottom: 2px dashed #fff;
+.fix-button:hover {
+    background-color: #070bff; 
+    transform: scale(1.1); /
 }
 
-.pricing .card p{
-    color: #fff;
-    margin-bottom: 0.75rem;
-}
-
-.pricing .card p i{
-    color: #ccc;
-    font-size: 1.2rem;
-    margin-right: 0.3rem;
-}
-
-.pricing .card button{
-    color: #fff;
-    background-color: transparent;
-    border: 2px solid #fff;
-}
-
-.pricing .card button:hover{
-    background-color: #1e40af;
-    border-color: #1e40af;
+.ri-arrow-up-line {
+    line-height: 50px; 
+    text-align: center; 
 }
 
 footer{
@@ -408,28 +401,21 @@ footer .column > a:hover{
     .filmes{
         grid-template-columns: repeat(2, 1fr);
     }
-    .pricing{
-        grid-template-columns: repeat(2, 1fr);
-    }
     footer{
         grid-template-columns: 1fr 200px;
     }
 }
 
-@media (width < 600px){
-    header .image::before{
+@media (max-width: 600px) {
+    header .image::before {
         display: none;
     }
 
-    .filmes{
+    .filmes {
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .pricing{
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    footer{
+    footer {
         grid-template-columns: 1fr 150px;
     }
 }

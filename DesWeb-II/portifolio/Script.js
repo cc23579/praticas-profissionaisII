@@ -1,54 +1,15 @@
-function adicionarCards(){
-   
-    var filmes = [
-        {
-            titulo: "O Poderoso Chefão",
-            diretor: "Francis Ford Coppola",
-            ano: 1972,
-            nota: 5.0
-        },
-        {
-            titulo: "Interestelar",
-            diretor: "Christopher Nolan",
-            ano: 2014,
-            nota: 2.0
-        },
-        {
-            titulo: "Matrix",
-            diretor: "Wachowski Brothers",
-            ano: 1999,
-            nota: 4.5
-        },
-        {
-            titulo: "Pulp Fiction",
-            diretor: "Quentin Tarantino",
-            ano: 1994,
-            nota: 3.2
-        }
-    ];
-
-
-    var container = document.getElementsByClassName("container");
-
-    
-    for (var i = 0; i < filmes.length; i++) {
-        
-        document.inner
-
-}
-}
-adicionarCards()
-
-
-
 
 function irParaRedesSociais(){
-    rolarSuavemente(3000000, 300)
+    rolarSuavemente(3000, 500)
 }
 
 
 function irParaALista(){
     rolarSuavemente(1130, 300)
+}
+
+function irParaTopo(){
+    rolarSuavemente(0, 300)
 }
 
 
@@ -71,3 +32,13 @@ function rolarSuavemente(destino, duracao){
     }
     animarScroll();
 }
+
+const ratingInputs = document.querySelectorAll('input[name="rating"]');
+let selectedRating = 0;
+
+ratingInputs.forEach(input => {
+    input.addEventListener('change', (event) => {
+        selectedRating = parseInt(event.target.value);
+        alert(`Classificação selecionada: ${selectedRating}`);
+    });
+});
